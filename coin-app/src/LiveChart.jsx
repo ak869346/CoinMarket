@@ -14,11 +14,11 @@ const LiveChart = () => {
       {
         label: 'Bitcoin Price',
         data: [],
-        borderColor: 'rgba(255, 99, 132, 1)', // Change line color to red
-        backgroundColor: 'rgba(255, 99, 132, 0.2)', // Change fill color to light red
+        borderColor: 'rgba(54, 162, 235, 1)', // Change line color to blue
+        backgroundColor: 'rgba(54, 162, 235, 0.2)', // Change fill color to light blue
         tension: 0.1,
-        pointBackgroundColor: 'rgba(255, 99, 132, 1)', // Change the points' color to red
-        borderWidth: 2,
+        // pointBackgroundColor: 'rgba(54, 162, 235, 1)', // Change the points' color to blue
+        borderWidth: 1, // Adjust line thickness as needed
       },
     ],
   });

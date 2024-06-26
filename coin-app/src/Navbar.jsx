@@ -6,11 +6,12 @@ const Navbar = () => {
       <div className="navbar-container">
         <a href="/" className="navbar-logo">Coin Marketcap</a>
         <div className="navbar-links">
-          <a href="#home" className="navbar-link">Cryptocurrencies</a>
-          <a href="#about" className="navbar-link">Exchanges</a>
-          <a href="#contact" className="navbar-link">Community</a>
-          <a href="#contact" className="navbar-link">Products</a>
-          <a href="#contact" className="navbar-link">Learn</a>
+          <a href="#home" className="navbar-link">Chart</a>
+          <a href="#about" className="navbar-link">Market</a>
+          <a href="#contact" className="navbar-link">News</a>
+          <a href="#contact" className="navbar-link">About</a>
+          <a href="#contact" className="navbar-link">Analytics</a>
+          <a href="#contact" className="navbar-link">Similar coins</a>
         </div>
       </div>
       <div className="navbar-right">

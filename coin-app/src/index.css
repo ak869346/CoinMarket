@@ -103,6 +103,7 @@ body, html {
   text-align: left; 
 }
 
+
 /* Styling for labels */
 .label {
   font-weight: bold;
@@ -179,7 +180,7 @@ body, html {
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  border-bottom: 0.5px solid grey;
+  border-bottom: 0.1px solid grey;
 }
 
 .navbar-container {
@@ -377,7 +378,7 @@ body, html {
   /* background-color: white; */
   color: black;
   text-align: center;
-  border-top: 1px solid grey;
+  border-top: 0.1px solid grey;
 }
 
 .footer-content {

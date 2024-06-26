@@ -47,7 +47,7 @@ const Coin = () => {
         <div className="bitcoin-dashboard">
           <div className="bitcoin-data-box">
             <div className="data-item">
-                <h1>Bitcoin (BTC)</h1>
+                <h1>Bitcoin&#40;BTC&#41;</h1>
             </div>
             <div className="data-item">
               <span className="value top">${data.price?.toLocaleString()}</span>
