@@ -1,0 +1,471 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  /* color: rgba(255, 255, 255, 0.87); */
+  color: #FFFFF7;
+  /* background-color: grey; */
+  background-color: #FFFFF7;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Ensure the box stays in the top left corner of the viewport */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* General styling for the dashboard */
+.bitcoin-dashboard {
+  position: relative;
+}
+
+/* Styling for the box containing Bitcoin data */
+.bitcoin-data-box {
+  color: black;
+  position: fixed; /* Use fixed to keep it in the same place even on scroll */
+  top: 20px; /* Distance from the top of the viewport */
+  left: 20px; /* Distance from the left of the viewport */
+  width: 300px; /* Size of the box */
+  padding: 20px; /* Internal padding for the box */
+  /* background-color: #f9f9f9; Light background for contrast */
+  /* border: 1px solid #ccc; Border for separation */
+  border-radius: 10px; /* Rounded corners */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Subtle shadow for depth */
+}
+
+/* Styling for each data item */
+.data-item {
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: left; /* Ensure text is aligned to the left */
+}
+
+/* Styling for labels */
+.label {
+  font-weight: bold;
+  display: inline-block; /* Keep labels on the same line as values */
+  width: 160px; /* Fixed width for labels to align values */
+}
+
+/* Styling for values */
+.value {
+  display: inline-block; /* Keep values inline with labels */
+  width: calc(100% - 160px); /* Take up remaining space */
+}
+
+.top {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+/* Live Chart Styling */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  /* background: #ffffff; */
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+  border-radius: 10px;
+  position: fixed; /* Use fixed positioning to keep it at the top */
+  top: 0; /* Align to the top */
+  left: 48%; /* Center horizontally */
+  transform: translateX(-50%); /* Center by shifting left by 50% of its own width */
+  z-index: 10; /* Ensure it's above other elements */
+  margin-top: 15px; /* No margin at the top */
+}
+
+.chart-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container h2 {
+    font-size: 18px;
+  }
+}
+
+/* Navbar Styling */
+/* src/styles/Navbar.css */
+
+/* src/styles/Navbar.css */
+
+.navbar {
+  width: 100%;
+  background-color:white;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it is above other content */
+  padding: 10px 20px; /* Adjust padding to give some space */
+  display: flex;
+  justify-content: space-between; /* Align content to both ends */
+  align-items: center;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Adjust gap between logo and links */
+}
+
+.navbar-logo {
+  color: #213547; /* Adjust color to ensure visibility */
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px; /* Adjust gap between links */
+}
+
+.navbar-link {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #ff6600;
+  font-weight: bold; /* Change font weight on hover */
+}
+
+/* Right part of the navbar */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust gap between right links and search bar */
+  margin-right: 40px; /* Shift the right part towards the left */
+}
+
+.navbar-right-links {
+  display: flex;
+  gap: 20px; /* Adjust gap between "Watchlist" and "Portfolio" */
+}
+
+.navbar-right-link {
+  color: #213547; /* Adjust color for visibility */
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-right-link:hover {
+  color: #ff6600;
+  font-weight: bold; /* Change font weight on hover */
+}
+
+/* Search bar styling */
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #f0f0f0;
+  font-size: 16px;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start; /* Adjust alignment for smaller screens */
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px; /* Adjust gap between links for smaller screens */
+  }
+
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start; /* Adjust alignment for smaller screens */
+    gap: 10px;
+    margin-right: 0; /* Reset margin for smaller screens */
+  }
+}
+
+
+/* Sidebar compont styling */
+/* src/BitcoinComponent.css */
+.bitcoin-component {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 420px;
+  /* background-color: #fff; */
+  padding: 20px;
+  border-radius: 8px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.follow-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.button-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+.top-button,
+.latest-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.console {
+  width: 100%;
+  height: 200px;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.console canvas {
+  background-color: black;
+}
+
+
+/* Footer Styling */
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 500px;
+  /* background-color: #2a2a2a; */
+  /* background-color:  #D1D9E0; */
+  /* background-color: #ff6600; */
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-section h2 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.footer-section p {
+  font-size: 0.9em;
+  line-height: 1.6em;
+}
+
+.logo-text {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links ul li {
+  margin: 5px 0;
+}
+
+.links ul li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
+
+.links ul li a:hover {
+  color: #28a745;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.social-icon {
+  font-size: 1em;
+  color: black;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #28a745;
+}
+
+.footer-bottom {
+  border-top: 1px solid #555;
+  padding: 10px 0;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 100px; /* Make space for the footer */
+}
